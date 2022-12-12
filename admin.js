@@ -31,15 +31,19 @@ firebase.firestore().collection("room1").onSnapshot( (querySnapshot)=>{
   
       console.log(doc.id, " => ", doc.data());
       document.getElementById('room1').innerHTML+=`
+      // <tr>
+      // <td>${doc.id}</td>
+      // <td>${doc.data().idClient}</td>
+      // <td>${doc.data().day}</td>
+      // <td>$ ${doc.data().price}.00</td>
+      // <td>
+      // <button class="btn btn-danger" onclick="deletec1(1,'${doc.id}')" >X</button>
+      // </td>
+      // </tr>
       <tr>
-      <td>${doc.id}</td>
-      <td>${doc.data().idClient}</td>
-      <td>${doc.data().day}</td>
-      <td>$ ${doc.data().price}.00</td>
-      <td>
-      <button class="btn btn-danger" onclick="deletec1(1,'${doc.id}')" >X</button>
-      </td>
-      </tr>
+      <td>${doc.data().name}</td>
+      <td>${doc.data().msg}</td>
+    </tr>
       `
     });
   });
@@ -77,7 +81,7 @@ firebase.firestore().collection("room3").onSnapshot( (querySnapshot)=>{
       <td>${doc.id}</td>
       <td>${doc.data().idClient}</td>
       <td>${doc.data().day}</td>
-      <td>$ ${doc.data().price}.00</td>
+      <td>${doc.data().price}.00</td>
       <td>
       <button class="btn btn-danger" onclick="deletec1(3,'${doc.id}')" >X</button>
       </td>
